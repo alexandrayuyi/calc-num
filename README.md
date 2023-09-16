@@ -11,6 +11,6 @@ Los temas a tratar en la evaluación son los siguientes:
 
 - Unidad II: Resolución de Sistemas de Ecuaciones por el Método de Cramer.
 
-- Unidad III: Método de las Potencias
+- Unidad III: Método de las Potencias.
 
-- Unidad IV: Interpolación de Lagrange
+- Unidad IV: Interpolación de Lagrange.
