@@ -35,11 +35,15 @@ class SistemaEcuaciones():
     def Mostrar(self):
         #Metodo que primero muestra la Matriz de coeficientes de las incognitas, luego muestra el Vector de coeficientes
         # independientes y por ultimo muestra el vector de todas las variables que son soluciones del sistema de ecuacionesS
-        print()
+        print("== Matriz de coeficientes de las incognitas ===")
         print(self.__Ax)
         print()
+        print("++ Vector de valores independientes ++")
         print(self.__B)
         print()
+        print("-- Vector de todas las soluciones del sistema --")
         print(self.__x)
 
+Solucion = SistemaEcuaciones()
+Solucion.Mostrar()
 
