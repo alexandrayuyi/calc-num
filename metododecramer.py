@@ -44,6 +44,7 @@ class SistemaEcuaciones():
         print("-- Vector de todas las soluciones del sistema --")
         print(self.__x)
 
-Solucion = SistemaEcuaciones()
-Solucion.Mostrar()
+def MostrarMetodoCramer():
+    Solucion = SistemaEcuaciones()
+    Solucion.Mostrar()
 
