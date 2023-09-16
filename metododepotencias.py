@@ -45,3 +45,19 @@ def Potencias(matriz,vector,it):
         list_vector.append(a[i]/np.max(a[i])) #Determinamos los autovectores y los almacenamos en `list_vector`
 
     return lambda_list, list_vector
+
+def MostrarMetodoPotencias():
+    matriz = [[3, -1, 1],
+          [-2, 4, 1], 
+          [2, -1, 2]]
+    A = np.array(matriz)
+    vector = [1, 0, 0]
+    v = np.array(vector)
+    a, b = Potencias(A,v,5)
+    print("-- Lista de Autovalores de la Matriz: --")
+    print(a)
+    print()
+    print(" ++ Lista de Autovectores de la Matriz ++")
+    for i in range(len(b)):
+        print(b[i])
+    
