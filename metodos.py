@@ -44,7 +44,7 @@ class SistemaEcuaciones():
     # el Vector de los coeficientes independientes y el Determinante de la matriz y un ultimo atributo que sera el
     # Vector x donde estaran todas las variables que son solucion del sistema de ecuaciones
     
-    __N = random.randint(3, 3)
+    __N = random.randint(2, 8)
     # Tamaño de la matriz y del vector de coeficientes independientes
     
     def __init__(self): # Inizialicacion de los atributos
@@ -187,7 +187,7 @@ def MostrarInterpolacion():
 
     valor = randint(0,10) #Se selecciona un valor al azar para evaluarlo en la Interpolacion de Lagrange
     resultado = interpolador.interpolacion_lagrange(valor) #Resultado de la evaluacion
-    return str(valor), str(resultado), interpolador.mostrarVectorX(), interpolador.mostrarVectorFx()
+    return interpolador.mostrarVectorX(), interpolador.mostrarVectorFx(), str(valor), str(resultado)
 
 def MostrarCramer():
     #MOSTRAR CRAMER

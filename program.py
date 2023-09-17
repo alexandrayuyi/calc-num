@@ -18,7 +18,7 @@ def main(page: Page):
         titulo2.value=""
         titulo1.color='#3679a8'
         Solucion = SistemaEcuaciones()
-        op1.value= Solucion.MostrarMatriz()
+        op1.value= Solucion.MostrarMatriz() + "\n"
         op2.value= Solucion.MostrarVectorIndependiente()
         res1.value=Solucion.MostrarSoluciones()
         res2.value=""
@@ -35,6 +35,7 @@ def main(page: Page):
         titulo2.value="Lista de Autovectores de la Matriz:"
         titulo1.color='#3679a8'
         titulo2.color='#3679a8'
+        op1.value, op2.value, res1.value, res2.value= MostrarPotencias()
         page.update()
 
     def lagrange_click(e):
@@ -47,6 +48,8 @@ def main(page: Page):
         titulo1.value="Resultado de la interpolacion:"
         titulo2.value=""
         titulo1.color='#3679a8'
+        res2.value=""
+        # op1.value, op2.value, res1.value = 
         page.update()
 
     def limpiar_click(e):
@@ -74,13 +77,13 @@ def main(page: Page):
     
     title1 = Text("Operación...", color='#b6adc9', style= TextThemeStyle.HEADLINE_SMALL)
     title2 = Text(style= TextThemeStyle.HEADLINE_SMALL)
-    op1= Text()
-    op2= Text()
+    op1= Text(style=TextThemeStyle.HEADLINE_SMALL)
+    op2= Text(style=TextThemeStyle.HEADLINE_SMALL)
     
     titulo1= Text("Resultados...", color='#b6adc9', style= TextThemeStyle.HEADLINE_SMALL)
     titulo2= Text(style= TextThemeStyle.HEADLINE_SMALL)
-    res1= Text()
-    res2 = Text()
+    res1= Text(style=TextThemeStyle.HEADLINE_SMALL)
+    res2 = Text(style=TextThemeStyle.HEADLINE_SMALL)
 
     botones = Container(padding=padding.only(top=10, bottom=10), width=100, height=50, content=Row(
         alignment=MainAxisAlignment.CENTER, spacing=60, controls=[cramer, pot, lagrange, limpiar],), margin=margin.only(bottom=10), bgcolor='#e6f0ff')
@@ -88,11 +91,11 @@ def main(page: Page):
     definicion = Container(height=50,content=texto, margin=margin.only(bottom=15, left=30, right=30))
     definicion.alignment = alignment.center
 
-    entrada = Container(width=730, height=40, margin= margin.only(right=20, left=20, bottom=30), border_radius=10, padding=padding.all(20), content=ListView(
+    entrada = Container(width=450, height=40, margin= margin.only(right=20, left=20, bottom=30), border_radius=10, padding=padding.all(20), content=ListView(
         controls=[title1, op1, title2, op2]
     ))
     entrada.border = border.all(3, '#322b45')
-    salida = Container(width=430, height=40, border_radius=10, margin= margin.only(left=20, bottom=30), padding=padding.all(20), content=ListView(controls=[titulo1,res1,titulo2,res2]))
+    salida = Container(width=710, height=40, border_radius=10, margin= margin.only(left=20, bottom=30), padding=padding.all(20), content=ListView(controls=[titulo1,res1,titulo2,res2]))
     salida.border = border.all(3, '#322b45')
 
     proceso = ListView(horizontal=True, height=500, width=500, controls=[entrada, salida])
