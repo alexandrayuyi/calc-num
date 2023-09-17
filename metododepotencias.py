@@ -1,4 +1,5 @@
 import numpy as np
+import random
 def Potencias(matriz,vector,it):
     """
     La función `Potencias` calcula el método de potencia para encontrar el los autovalores y
@@ -46,12 +47,26 @@ def Potencias(matriz,vector,it):
 
     return lambda_list, list_vector
 
+def matriz_random(filas, columnas, minimo, maximo):
+  
+  matriz = []
+  for fila in range(filas):
+    fila_aleatoria = []
+    for columna in range(columnas):
+      fila_aleatoria.append(random.randint(minimo, maximo))
+    matriz.append(fila_aleatoria)
+  return matriz
+
+def vector_random(n, min, max):
+  vector = []
+  for i in range(n):
+    vector.append(random.randint(min, max))
+  return vector
+
 def MostrarMetodoPotencias():
-    matriz = [[3, -1, 1],
-          [-2, 4, 1], 
-          [2, -1, 2]]
+    matriz = matriz_random(3,3,3,100)
     A = np.array(matriz)
-    vector = [1, 0, 0]
+    vector = vector_random(3,1,100)
     v = np.array(vector)
     a, b = Potencias(A,v,5)
     print("-- Lista de Autovalores de la Matriz: --")
@@ -60,4 +75,4 @@ def MostrarMetodoPotencias():
     print(" ++ Lista de Autovectores de la Matriz ++")
     for i in range(len(b)):
         print(b[i])
-    
+MostrarMetodoPotencias()
