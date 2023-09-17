@@ -193,4 +193,4 @@ def MostrarCramer():
     #MOSTRAR CRAMER
     print("\n\nCRAMER")
     Solucion = SistemaEcuaciones()
-    return SistemaEcuaciones.MostrarMatriz, SistemaEcuaciones.MostrarSoluciones, SistemaEcuaciones.MostrarVectorIndependiente
+    return Solucion.MostrarMatriz, Solucion.MostrarSoluciones, Solucion.MostrarVectorIndependiente

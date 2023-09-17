@@ -1,5 +1,5 @@
 from flet import *
-from operaciones import *
+from metodos import *
 
 
 def main(page: Page):
@@ -10,36 +10,43 @@ def main(page: Page):
     def cramer_click(e):
         texto.value= "La regla de Cramer es un método para resolver sistemas de ecuaciones lineales. Se basa en el cálculo de determinantes, y es aplicable a sistemas con tantas ecuaciones como incógnitas, siempre y cuando el determinante de la matriz de coeficientes sea distinto de cero."
         limpiar.disabled = False
-        title1.color= '#432b78'
-        title2.color='#432b78'
+        title1.color= '#3679a8'
+        title2.color='#3679a8'
         title1.value="Matriz de coeficientes de las incognitas:"
         title2.value="Vector de Valores Independientes:"
         titulo1.value="Vector de las soluciones del Sistema:"
-        titulo1.color='#432b78'
+        titulo2.value=""
+        titulo1.color='#3679a8'
+        Solucion = SistemaEcuaciones()
+        op1.value= Solucion.MostrarMatriz()
+        op2.value= Solucion.MostrarVectorIndependiente()
+        res1.value=Solucion.MostrarSoluciones()
+        res2.value=""
         page.update()
 
     def pot_click(e):
         limpiar.disabled = False
         texto.value="El método de las potencias es un método para resolver ecuaciones no lineales. Consiste en aproximar la solución de la ecuación por una serie de potencias de la variable independiente. Esta serie se construye de manera iterativa. En cada iteración la solución se aproxima aún más a la solución real."
-        title1.color= '#432b78'
-        title2.color='#432b78'
+        title1.color= '#3679a8'
+        title2.color='#3679a8'
         title1.value="Matriz Inicial:"
         title2.value="Vector Inicial:"
         titulo1.value="Lista de Autovalores de la Matriz:"
         titulo2.value="Lista de Autovectores de la Matriz:"
-        titulo1.color='#432b78'
-        titulo2.color='#432b78'
+        titulo1.color='#3679a8'
+        titulo2.color='#3679a8'
         page.update()
 
     def lagrange_click(e):
         limpiar.disabled = False
         texto.value= "La interpolación de Lagrange es un método que permite aproximar en un intervalo a una función desconocida a partir de un conjunto de puntos conocidos. Consiste en construir un polinomio de grado n, donde n es el número de puntos conocidos y el polinomio pasa por todos los puntos conocidos."
-        title1.color= '#432b78'
-        title2.color='#432b78'
+        title1.color= '#3679a8'
+        title2.color='#3679a8'
         title1.value="Valores:"
         title2.value="Valor a interpolar:"
         titulo1.value="Resultado de la interpolacion:"
-        titulo1.color='#432b78'
+        titulo2.value=""
+        titulo1.color='#3679a8'
         page.update()
 
     def limpiar_click(e):
