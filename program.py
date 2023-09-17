@@ -12,7 +12,7 @@ def main(page: Page):
         limpiar.disabled = False
         title1.color= '#3679a8'
         title2.color='#3679a8'
-        title1.value="Matriz de coeficientes de las incognitas:"
+        title1.value="Matriz de coeficientes de las incógnitas:"
         title2.value="Vector de Valores Independientes:"
         titulo1.value="Vector de las soluciones del Sistema:"
         titulo2.value=""
@@ -45,7 +45,7 @@ def main(page: Page):
         title2.color='#3679a8'
         title1.value="Valores:"
         title2.value="Valor a interpolar:"
-        titulo1.value="Resultado de la interpolacion:"
+        titulo1.value="Resultado de la interpolación:"
         titulo2.value=""
         titulo1.color='#3679a8'
         res2.value=""
