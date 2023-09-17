@@ -13,7 +13,7 @@ Los temas a tratar en la evaluación son los siguientes:
 
 - Unidad III: Método de las Potencias.
 
-- Unidad IV: Interpolación de Lagrange.
+- Unidad IV: Interpolación de Lagrange: Usada para obtener una serie de puntos (funcion) a través de una cantidad determinada de pares ordenados (x,y).
 
 
 ## Interfaz Gráfica
