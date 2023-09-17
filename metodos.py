@@ -70,37 +70,20 @@ class SistemaEcuaciones():
             Ai.T[i] = self.__B
             Di= np.linalg.det(Ai)
             self.__x[i] = Di/self.__det
-
-    def Mostrar(self):
-        #Metodo que primero muestra la Matriz de coeficientes de las incognitas, luego muestra el Vector de coeficientes
-        # independientes y por ultimo muestra el vector de todas las variables que son soluciones del sistema de ecuacionesS
-        print("== Matriz de coeficientes de las incognitas ===")
-        print(self.__Ax)
-        print()
-        print("++ Vector de valores independientes ++")
-        print(self.__B)
-        print()
-        print("-- Vector de todas las soluciones del sistema --")
-        print(self.__x)
     
-    def MostrarA(self):
+    def MostrarMatriz(self):
         #Metodo que muestra la Matriz de coeficientes de las incognitas
-        print("== Matriz de coeficientes de las incognitas ===")
-        print(self.__Ax)
-        print()
+        return str(self.__Ax)
+        
     
-    def MostrarB(self):
+    def MostrarVectorIndependiente(self):
         #Metodo que muestra el Vector de coeficientes independientes
-        print()
-        print("++ Vector de valores independientes ++")
-        print(self.__B)
-        print()
+        return str(self.__B)
     
-    def MostrarX(self):
+    def MostrarSoluciones(self):
         #Metodo que muestra el vector de todas las variables que son soluciones del sistema de ecuacionesS
-        print()
-        print("-- Vector de todas las soluciones del sistema --")
-        print(self.__x)
+        return str(self.__x)
+
 #TERMINA CRAMER
 
 
