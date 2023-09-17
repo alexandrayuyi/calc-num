@@ -32,12 +32,8 @@ class SistemaEcuaciones():
             Di= np.linalg.det(Ai)
             self.__x[i] = Di/self.__det
 
-    def MostrarAx(self):
+    def MostrarA(self):
         #Metodo que muestra la Matriz de coeficientes de las incognitas
-        print()
-    def Mostrar(self):
-        #Metodo que primero muestra la Matriz de coeficientes de las incognitas, luego muestra el Vector de coeficientes
-        # independientes y por ultimo muestra el vector de todas las variables que son soluciones del sistema de ecuacionesS
         print("== Matriz de coeficientes de las incognitas ===")
         print(self.__Ax)
         print()

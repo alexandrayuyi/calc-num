@@ -82,6 +82,25 @@ class SistemaEcuaciones():
         print()
         print("-- Vector de todas las soluciones del sistema --")
         print(self.__x)
+    
+    def MostrarA(self):
+        #Metodo que muestra la Matriz de coeficientes de las incognitas
+        print("== Matriz de coeficientes de las incognitas ===")
+        print(self.__Ax)
+        print()
+    
+    def MostrarB(self):
+        #Metodo que muestra el Vector de coeficientes independientes
+        print()
+        print("++ Vector de valores independientes ++")
+        print(self.__B)
+        print()
+    
+    def MostrarX(self):
+        #Metodo que muestra el vector de todas las variables que son soluciones del sistema de ecuacionesS
+        print()
+        print("-- Vector de todas las soluciones del sistema --")
+        print(self.__x)
 #TERMINA CRAMER
 
 

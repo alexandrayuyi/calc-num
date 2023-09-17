@@ -1,5 +1,5 @@
 from flet import *
-from metododecramer import *
+from operaciones import *
 
 
 def main(page: Page):
@@ -10,6 +10,8 @@ def main(page: Page):
     def cramer_click(e):
         texto.value= "La regla de Cramer es un método para resolver sistemas de ecuaciones lineales. Se basa en el cálculo de determinantes, y es aplicable a sistemas con tantas ecuaciones como incógnitas, siempre y cuando el determinante de la matriz de coeficientes sea distinto de cero."
         limpiar.disabled = False
+        Solucion = SistemaEcuaciones()
+        textoEntrada.value= Solucion.Mostrar()
         page.update()
 
     def pot_click(e):
@@ -24,7 +26,7 @@ def main(page: Page):
 
     def limpiar_click(e):
         limpiar.disabled = True
-        texto.value= ""
+        texto.value= "Haz click en un botón para ejecutar las funciones del método elegido y ver el resultado."
         page.update()
 
     cramer = FilledTonalButton("Regla de Cramer", on_click=cramer_click)
@@ -32,18 +34,22 @@ def main(page: Page):
     lagrange = FilledTonalButton("Interpolación de Lagrange", on_click=lagrange_click)
     limpiar = OutlinedButton("Limpiar", on_click=limpiar_click, disabled=True)
 
-    texto = Text()
+    texto = Text("Para comenzar haz click en un botón para ejecutar las funciones del método elegido.")
+    
+    textoEntrada= Text("Aquí se mostrará la entrada de la operación")
 
     botones = Container(padding=padding.only(top=10, bottom=10), width=100, height=50, content=Row(
         alignment=MainAxisAlignment.CENTER, spacing=60, controls=[cramer, pot, lagrange, limpiar],), margin=margin.only(bottom=10), bgcolor='#e6f0ff')
 
-    definicion = Container(height=50,content=texto, margin=margin.only(bottom=5, left=10, right=10))
+    definicion = Container(height=50,content=texto, margin=margin.only(bottom=15, left=30, right=30))
     definicion.alignment = alignment.center
 
-    entrada = Container(width=800, height=100, margin= margin.only(right=20), border_radius=10)
-    entrada.border = border.all(5, '#343536')
-    salida = Container(width=430, height=100, border_radius=10)
-    salida.border = border.all(5, '#343536')
+    entrada = Container(width=730, height=40, margin= margin.only(right=20, left=20, bottom=30), border_radius=10, content=ListView(
+        controls=[textoEntrada]
+    ))
+    entrada.border = border.all(3, '#322b45')
+    salida = Container(width=430, height=40, border_radius=10, margin= margin.only(left=20, bottom=30))
+    salida.border = border.all(3, '#322b45')
 
     proceso = ListView(horizontal=True, height=500, width=500, controls=[entrada, salida])
 
@@ -63,25 +69,6 @@ def main(page: Page):
     container.margin = margin.all(5)
     page.add(container)
     page.update()
-
-    # row = ft.Row(alignment= ft.MainAxisAlignment.CENTER ,spacing=60, controls=[cramer,pot,lagrange,limpiar])
-    # page.add(row)
-    # page.update()
-
-    # desc = ft.Text("Headline Small", style=ft.TextThemeStyle.HEADLINE_MEDIUM)
-    # c= ft.Container(content= desc, padding=60, border_radius=10,
-    # width=2000,
-    # height=100,
-    # shadow=ft.BoxShadow(
-    #     spread_radius=1,
-    #     blur_radius=15,
-    #     color=ft.colors.BLUE_GREY_300,
-    #     offset=ft.Offset(0, 0),
-    #     blur_style=ft.ShadowBlurStyle.OUTER,))
-    # c.margin= ft.margin.all(20)
-    # page.add(c)
-
-    # txt_number = ft.TextField(value="0", text_align=ft.TextAlign.RIGHT, width=100)
 
 
 app(target=main)
