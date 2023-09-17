@@ -31,7 +31,7 @@ class Lagrange: #Clase Principal
         return resultado
     
     def mostrarPares(self): #Retorna el vector de valores de X
-        Par = ""
+        Par = "       x             f(x)" + "\n"
         for i in range(len(self.valores_x)):
             Par = Par + str("{:^15}{:^15} \n".format(self.valores_x[i],self.valores_y[i]))
         return str(Par)
@@ -188,7 +188,7 @@ def MostrarInterpolacion():
 
     valor = randint(0,10) #Se selecciona un valor al azar para evaluarlo en la Interpolacion de Lagrange
     resultado = interpolador.interpolacion_lagrange(valor) #Resultado de la evaluacion
-    return str(valor), str(resultado), interpolador.mostrarPares()
+    return interpolador.mostrarPares(),str(valor), str(resultado)
 
 def MostrarCramer():
     #MOSTRAR CRAMER

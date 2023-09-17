@@ -49,7 +49,7 @@ def main(page: Page):
         titulo2.value=""
         titulo1.color='#3679a8'
         res2.value=""
-        # op1.value, op2.value, res1.value = 
+        op1.value, op2.value, res1.value = MostrarInterpolacion()
         page.update()
 
     def limpiar_click(e):
@@ -91,11 +91,11 @@ def main(page: Page):
     definicion = Container(height=50,content=texto, margin=margin.only(bottom=15, left=30, right=30))
     definicion.alignment = alignment.center
 
-    entrada = Container(width=450, height=40, margin= margin.only(right=20, left=20, bottom=30), border_radius=10, padding=padding.all(20), content=ListView(
+    entrada = Container(width=420, height=40, margin= margin.only(right=20, left=20, bottom=30), border_radius=10, padding=padding.all(20), content=ListView(
         controls=[title1, op1, title2, op2]
     ))
     entrada.border = border.all(3, '#322b45')
-    salida = Container(width=710, height=40, border_radius=10, margin= margin.only(left=20, bottom=30), padding=padding.all(20), content=ListView(controls=[titulo1,res1,titulo2,res2]))
+    salida = Container(width=740, height=40, border_radius=10, margin= margin.only(left=20, bottom=30), padding=padding.all(20), content=ListView(controls=[titulo1,res1,titulo2,res2]))
     salida.border = border.all(3, '#322b45')
 
     proceso = ListView(horizontal=True, height=500, width=500, controls=[entrada, salida])
