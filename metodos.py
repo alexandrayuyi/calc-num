@@ -30,11 +30,11 @@ class Lagrange: #Clase Principal
             resultado += producto #Sumatoria de terminos de Lagrange
         return resultado
     
-    def mostrarVectorX(self): #Retorna el vector de valores de X
-        return str(self.valores_x)
-    
-    def mostrarVectorFx(self): #Retorna el vector de valores de Y o f(x)
-        return str(self.valores_y)
+    def mostrarPares(self): #Retorna el vector de valores de X
+        Par = ""
+        for i in range(len(self.valores_x)):
+            Par = Par + str("{:^15}{:^15} \n".format(self.valores_x[i],self.valores_y[i]))
+        return str(Par)
     
     #TERMINA LAGRANGE
 
@@ -166,11 +166,12 @@ def MostrarPotencias():
 
     v = np.array(vector)
     a, b = Potencias(A,v,5)
-    return str(matriz), str(vector), str(a), str(b)
-
+    h = []
+    for i in range(len(b)):
+        h.append(str(b[i]))
+    return str(matriz), str(vector), str(a), str(h)
 def MostrarInterpolacion():
-    #MOSTRAR METODO DE LAGRANGE
-    print("\n\nLAGRANGE")
+
     interpolador = Lagrange() #Se ctrea un objeto de la clase Lagrange()
     n = randint(1,5) #Se trabajar como maximo con 5 pares
     for i in range(n):
@@ -187,10 +188,9 @@ def MostrarInterpolacion():
 
     valor = randint(0,10) #Se selecciona un valor al azar para evaluarlo en la Interpolacion de Lagrange
     resultado = interpolador.interpolacion_lagrange(valor) #Resultado de la evaluacion
-    return interpolador.mostrarVectorX(), interpolador.mostrarVectorFx(), str(valor), str(resultado)
+    return str(valor), str(resultado), interpolador.mostrarPares()
 
 def MostrarCramer():
     #MOSTRAR CRAMER
     Solucion = SistemaEcuaciones()
     return Solucion.MostrarMatriz(), Solucion.MostrarSoluciones(), Solucion.MostrarVectorIndependiente()
-
