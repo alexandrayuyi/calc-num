@@ -12,9 +12,9 @@ def main(page: Page):
         limpiar.disabled = False
         title1.color= '#432b78'
         title2.color='#432b78'
-        title1.value="Matriz de coeficientes de las incognitas"
-        title2.value="Vector de Valores Independientes"
-        titulo1.value="Vector de las soluciones del Sistema"
+        title1.value="Matriz de coeficientes de las incognitas:"
+        title2.value="Vector de Valores Independientes:"
+        titulo1.value="Vector de las soluciones del Sistema:"
         titulo1.color='#432b78'
         page.update()
 
@@ -23,6 +23,12 @@ def main(page: Page):
         texto.value="El método de las potencias es un método para resolver ecuaciones no lineales. Consiste en aproximar la solución de la ecuación por una serie de potencias de la variable independiente. Esta serie se construye de manera iterativa. En cada iteración la solución se aproxima aún más a la solución real."
         title1.color= '#432b78'
         title2.color='#432b78'
+        title1.value="Matriz Inicial:"
+        title2.value="Vector Inicial:"
+        titulo1.value="Lista de Autovalores de la Matriz:"
+        titulo2.value="Lista de Autovectores de la Matriz:"
+        titulo1.color='#432b78'
+        titulo2.color='#432b78'
         page.update()
 
     def lagrange_click(e):
@@ -30,6 +36,10 @@ def main(page: Page):
         texto.value= "La interpolación de Lagrange es un método que permite aproximar en un intervalo a una función desconocida a partir de un conjunto de puntos conocidos. Consiste en construir un polinomio de grado n, donde n es el número de puntos conocidos y el polinomio pasa por todos los puntos conocidos."
         title1.color= '#432b78'
         title2.color='#432b78'
+        title1.value="Valores:"
+        title2.value="Valor a interpolar:"
+        titulo1.value="Resultado de la interpolacion:"
+        titulo1.color='#432b78'
         page.update()
 
     def limpiar_click(e):
