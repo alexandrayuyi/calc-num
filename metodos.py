@@ -187,10 +187,10 @@ def MostrarInterpolacion():
 
     valor = randint(0,10) #Se selecciona un valor al azar para evaluarlo en la Interpolacion de Lagrange
     resultado = interpolador.interpolacion_lagrange(valor) #Resultado de la evaluacion
-    return str(valor), str(resultado), interpolador.mostrarVectorX, interpolador.mostrarVectorFx
+    return str(valor), str(resultado), interpolador.mostrarVectorX(), interpolador.mostrarVectorFx()
 
 def MostrarCramer():
     #MOSTRAR CRAMER
-    print("\n\nCRAMER")
     Solucion = SistemaEcuaciones()
-    return Solucion.MostrarMatriz, Solucion.MostrarSoluciones, Solucion.MostrarVectorIndependiente
+    return Solucion.MostrarMatriz(), Solucion.MostrarSoluciones(), Solucion.MostrarVectorIndependiente()
+
