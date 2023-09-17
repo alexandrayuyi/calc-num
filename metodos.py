@@ -168,17 +168,26 @@ def vector_random(n, min, max):
     vector.append(random.randint(min, max))
   return vector
 
+def imprimir(matriz):
+    for fila in matriz:
+        fila_formateada = ' '.join(str(elemento) for elemento in fila)
+        print(fila_formateada)
+
 #TERMINA
 
 def Main():
     #MOSTRAR METODO DE POTENCIAS
     print("\n\nPOTENCIAS")
     matriz = matriz_random(3,3,3,100)
+    print("\n-- Matriz Inicial --\n")
+    imprimir(matriz)
     A = np.array(matriz)
     vector = vector_random(3,1,100)
+    print("\n-- Vector Inicial --\n")
+    print(vector)
     v = np.array(vector)
     a, b = Potencias(A,v,5)
-    print("-- Lista de Autovalores de la Matriz: --")
+    print("\n-- Lista de Autovalores de la Matriz: --")
     print(a)
     print()
     print(" ++ Lista de Autovectores de la Matriz ++")
