@@ -5,7 +5,7 @@ class SistemaEcuaciones():
     # el Vector de los coeficientes independientes y el Determinante de la matriz y un ultimo atributo que sera el
     # Vector x donde estaran todas las variables que son solucion del sistema de ecuaciones
     
-    __N = random.randint(3, 3)
+    __N = random.randint(2, 9)
     # Tamaño de la matriz y del vector de coeficientes independientes
     
     def __init__(self): # Inizialicacion de los atributos
@@ -32,13 +32,20 @@ class SistemaEcuaciones():
             Di= np.linalg.det(Ai)
             self.__x[i] = Di/self.__det
 
-    def Mostrar(self):
-        #Metodo que primero muestra la Matriz de coeficientes de las incognitas, luego muestra el Vector de coeficientes
-        # independientes y por ultimo muestra el vector de todas las variables que son soluciones del sistema de ecuacionesS
+    def MostrarAx(self):
+        #Metodo que muestra la Matriz de coeficientes de las incognitas
         print()
         print(self.__Ax)
         print()
+    
+    def MostrarB(self):
+        #Metodo que muestra el Vector de coeficientes independientes
+        print()
         print(self.__B)
+        print()
+    
+    def MostrarX(self):
+        #Metodo que muestra el vector de todas las variables que son soluciones del sistema de ecuacionesS
         print()
         print(self.__x)
 
