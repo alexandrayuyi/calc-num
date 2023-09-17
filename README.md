@@ -25,11 +25,6 @@ un problema con un tipo de botón, en dónde el estilo deshabilitado no funciona
 
 
 ## Posibles mejoras
-- La razón por la que no hay espacios entre los outputs en las operaciones y los resultados es porque el control de tipo texto
-- en flet no tiene la propiedad de margen, y por otro lado, la asignacion de los valores de los outputs en los eventos de clickear algún botón,
-- los hacemos en simultáneo. Es decir, que con una sola función para mostrar, retornamos todas las strings necesarias, y las asignamos en una
-- sola línea de código. Esto lo decidimos hacer así por practicidad y optimización de tiempo, pero no nos permitió concatenar saltos de línea en
-- las strings para agregar espacio entre los outputs.
+La razón por la que no hay espacios entre los outputs en las operaciones y los resultados es porque el control de tipo texto en flet no tiene la propiedad de margen, y por otro lado, la asignacion de los valores de los outputs en los eventos de clickear algún botón, los hacemos en simultáneo. Es decir, que con una sola función para mostrar, retornamos todas las strings necesarias, y las asignamos en una sola línea de código. Esto lo decidimos hacer así por practicidad y optimización de tiempo, pero no nos permitió concatenar saltos de línea en las strings para agregar espacio entre los outputs.
 
-- Por otro lado, nuestro diseño de algoritmos es completamente funcional, pero en los modulos de Potencias y Cramer, la randomnización en una misma
-- sesión se limita sólo a los elementos del operando, y no al tamaño del mismo.
+Por otro lado, nuestro diseño de algoritmos es completamente funcional, pero en los modulos de Potencias y Cramer, la randomnización en una misma sesión se limita sólo a los elementos del operando, y no al tamaño del mismo.
