@@ -10,23 +10,42 @@ def main(page: Page):
     def cramer_click(e):
         texto.value= "La regla de Cramer es un método para resolver sistemas de ecuaciones lineales. Se basa en el cálculo de determinantes, y es aplicable a sistemas con tantas ecuaciones como incógnitas, siempre y cuando el determinante de la matriz de coeficientes sea distinto de cero."
         limpiar.disabled = False
-        Solucion = SistemaEcuaciones()
-        textoEntrada.value= Solucion.Mostrar()
+        title1.color= '#432b78'
+        title2.color='#432b78'
+        title1.value="Matriz de coeficientes de las incognitas"
+        title2.value="Vector de Valores Independientes"
+        titulo1.value="Vector de las soluciones del Sistema"
+        titulo1.color='#432b78'
         page.update()
 
     def pot_click(e):
         limpiar.disabled = False
         texto.value="El método de las potencias es un método para resolver ecuaciones no lineales. Consiste en aproximar la solución de la ecuación por una serie de potencias de la variable independiente. Esta serie se construye de manera iterativa. En cada iteración la solución se aproxima aún más a la solución real."
+        title1.color= '#432b78'
+        title2.color='#432b78'
         page.update()
 
     def lagrange_click(e):
         limpiar.disabled = False
         texto.value= "La interpolación de Lagrange es un método que permite aproximar en un intervalo a una función desconocida a partir de un conjunto de puntos conocidos. Consiste en construir un polinomio de grado n, donde n es el número de puntos conocidos y el polinomio pasa por todos los puntos conocidos."
+        title1.color= '#432b78'
+        title2.color='#432b78'
         page.update()
 
     def limpiar_click(e):
         limpiar.disabled = True
         texto.value= "Haz click en un botón para ejecutar las funciones del método elegido y ver el resultado."
+        title1.color='#b6adc9'
+        title1.value="Operación..."
+        title2.value=""
+        op1.value=""
+        op2.value=""
+    
+        titulo1.value= "Resultados..."
+        titulo1.color='#b6adc9'
+        titulo2.value=""
+        res1.value=""
+        res2.value=""
         page.update()
 
     cramer = FilledTonalButton("Regla de Cramer", on_click=cramer_click)
@@ -36,7 +55,15 @@ def main(page: Page):
 
     texto = Text("Para comenzar haz click en un botón para ejecutar las funciones del método elegido.")
     
-    textoEntrada= Text("Aquí se mostrará la entrada de la operación")
+    title1 = Text("Operación...", color='#b6adc9', style= TextThemeStyle.HEADLINE_SMALL)
+    title2 = Text(style= TextThemeStyle.HEADLINE_SMALL)
+    op1= Text()
+    op2= Text()
+    
+    titulo1= Text("Resultados...", color='#b6adc9', style= TextThemeStyle.HEADLINE_SMALL)
+    titulo2= Text(style= TextThemeStyle.HEADLINE_SMALL)
+    res1= Text()
+    res2 = Text()
 
     botones = Container(padding=padding.only(top=10, bottom=10), width=100, height=50, content=Row(
         alignment=MainAxisAlignment.CENTER, spacing=60, controls=[cramer, pot, lagrange, limpiar],), margin=margin.only(bottom=10), bgcolor='#e6f0ff')
@@ -44,11 +71,11 @@ def main(page: Page):
     definicion = Container(height=50,content=texto, margin=margin.only(bottom=15, left=30, right=30))
     definicion.alignment = alignment.center
 
-    entrada = Container(width=730, height=40, margin= margin.only(right=20, left=20, bottom=30), border_radius=10, content=ListView(
-        controls=[textoEntrada]
+    entrada = Container(width=730, height=40, margin= margin.only(right=20, left=20, bottom=30), border_radius=10, padding=padding.all(20), content=ListView(
+        controls=[title1, op1, title2, op2]
     ))
     entrada.border = border.all(3, '#322b45')
-    salida = Container(width=430, height=40, border_radius=10, margin= margin.only(left=20, bottom=30))
+    salida = Container(width=430, height=40, border_radius=10, margin= margin.only(left=20, bottom=30), padding=padding.all(20), content=ListView(controls=[titulo1,res1,titulo2,res2]))
     salida.border = border.all(3, '#322b45')
 
     proceso = ListView(horizontal=True, height=500, width=500, controls=[entrada, salida])
