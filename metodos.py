@@ -30,12 +30,12 @@ class Lagrange: #Clase Principal
             resultado += producto #Sumatoria de terminos de Lagrange
         return resultado
     
-    def mostrar(self): #Impresion de pares ordenados (x,f(x))
-        print("")
-        print("-----------VALORES-----------")
-        print("       x             f(x)     ")
-        for i in range(len(self.valores_x)):
-            print("{:^15}{:^15}".format(self.valores_x[i],self.valores_y[i]))
+    def mostrarVectorX(self): #Retorna el vector de valores de X
+        return str(self.valores_x)
+    
+    def mostrarVectorFx(self): #Retorna el vector de valores de Y o f(x)
+        return str(self.valores_y)
+    
     #TERMINA LAGRANGE
 
 #INICIA CRAMER
