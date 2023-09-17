@@ -30,12 +30,12 @@ class Lagrange: #Clase Principal
             resultado += producto #Sumatoria de terminos de Lagrange
         return resultado
     
-    def mostrar(self): #Impresion de pares ordenados (x,f(x))
-        print("")
-        print("-----------VALORES-----------")
-        print("       x             f(x)     ")
-        for i in range(len(self.valores_x)):
-            print("{:^15}{:^15}".format(self.valores_x[i],self.valores_y[i]))
+    def mostrarVectorX(self): #Retorna el vector de valores de X
+        return str(self.valores_x)
+    
+    def mostrarVectorFx(self): #Retorna el vector de valores de Y o f(x)
+        return str(self.valores_y)
+    
     #TERMINA LAGRANGE
 
 #INICIA CRAMER
@@ -136,7 +136,6 @@ def Potencias(matriz,vector,it):
     return lambda_list, list_vector
 
 def matriz_random(filas, columnas, minimo, maximo):
-  
   matriz = []
   for fila in range(filas):
     fila_aleatoria = []
@@ -158,25 +157,18 @@ def imprimir(matriz):
 
 #TERMINA
 
-def Main():
+def MostrarPotencias():
     #MOSTRAR METODO DE POTENCIAS
-    print("\n\nPOTENCIAS")
     matriz = matriz_random(3,3,3,100)
-    print("\n-- Matriz Inicial --\n")
-    imprimir(matriz)
     A = np.array(matriz)
+
     vector = vector_random(3,1,100)
-    print("\n-- Vector Inicial --\n")
-    print(vector)
+
     v = np.array(vector)
     a, b = Potencias(A,v,5)
-    print("\n-- Lista de Autovalores de la Matriz: --")
-    print(a)
-    print()
-    print(" ++ Lista de Autovectores de la Matriz ++")
-    for i in range(len(b)):
-        print(b[i])
+    return str(matriz), str(vector), str(a), str(b)
 
+def MostrarInterpolacion():
     #MOSTRAR METODO DE LAGRANGE
     print("\n\nLAGRANGE")
     interpolador = Lagrange() #Se ctrea un objeto de la clase Lagrange()
@@ -193,16 +185,12 @@ def Main():
         
         interpolador.agregar_punto(numero_aleatorio_x,numero_aleatorio_y) #Se agregan los terminos (x,f(x)) a su respectivo vector
 
-    interpolador.mostrar() #Se imprimen los pares ordenados
-
     valor = randint(0,10) #Se selecciona un valor al azar para evaluarlo en la Interpolacion de Lagrange
-    print("\nValor a interpolar: ",valor) 
     resultado = interpolador.interpolacion_lagrange(valor) #Resultado de la evaluacion
-    print("")
-    print("Resultado de la interpolacion: ",resultado)
+    return str(valor), str(resultado), interpolador.mostrarVectorX, interpolador.mostrarVectorFx
 
+def MostrarCramer():
     #MOSTRAR CRAMER
     print("\n\nCRAMER")
     Solucion = SistemaEcuaciones()
-    Solucion.Mostrar()
-Main()
+    return SistemaEcuaciones.MostrarMatriz, SistemaEcuaciones.MostrarSoluciones, SistemaEcuaciones.MostrarVectorIndependiente
